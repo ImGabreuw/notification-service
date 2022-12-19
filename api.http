@@ -1,0 +1,24 @@
+### Create notification
+POST {{host}}/notifications
+Content-Type: application/json
+
+{
+  "recipientId": "e9e87c05-82eb-4522-bc47-f0fcfdde4cab",
+  "content": "{{$random.alphanumeric(20)}}",
+  "category": "social"
+}
+
+### Cancel notification
+PATCH {{host}}/notifications/8779eaa3-fa91-43f9-a78b-8c36c8e71993/cancel
+
+### Count notifications from recipient
+GET {{host}}/notifications/count/from/e9e87c05-82eb-4522-bc47-f0fcfdde4cab
+
+### Get notifications from recipient
+GET {{host}}/notifications/from/e9e87c05-82eb-4522-bc47-f0fcfdde4cab
+
+### Read notification
+PATCH {{host}}/notifications/35944601-dd8a-4261-9ac3-9d6774835803/read
+
+### Unread notification
+PATCH {{host}}/notifications/35944601-dd8a-4261-9ac3-9d6774835803/unread
